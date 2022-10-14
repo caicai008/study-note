@@ -17,8 +17,33 @@ Babel 是一个工具链，主要用于在当前和旧的浏览器或环境中�
   return n + 1;
 });
 ```
-
-
+## babel编译原理
+![image](https://user-images.githubusercontent.com/110797557/195746466-c72e86c2-4c99-4c99-aecc-b46e7ed3027d.png)
+## 安装
+1运行这些命令以安装 packages:
+```bash
+npm install --save-dev @babel/core @babel/cli @babel/preset-env
+```
+2.使用以下内容在项目的根目录中创建名为 babel.config.json（需要 v7.8.0 及以上版本）的配置文件：
+```js
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "edge": "17",
+          "firefox": "60",
+          "chrome": "67",
+          "safari": "11.1"
+        },
+        "useBuiltIns": "usage",
+        "corejs": "3.6.5"
+      }
+    ]
+  ]
+}
+```
 
 
 
